@@ -1,7 +1,8 @@
 <?php include('header.php');?>
 <?php include('sidebar.php');?>
 <?php include('bredcum.php');?>
-<?php $user_id=$_SESSION['user_id'];
+<?php 
+$user_id=$_SESSION['user_id'];
 ?>
 
 <!-- Main content -->
@@ -28,22 +29,25 @@
     </div>
     </div>
     <div class="col-md-6 box-header">	
-    <select class="form-control plist" name="limit">
+    <select class="form-control psort">
      <option value="">Sort Profiles By</option>
-       <option value="dateadded">Date added</option>
-       <option value="title">Profile Title</option>
-       <option value="articles">Number of Articles</option>
-       <option value="posts">Existing posts</option>
+       <option value="addeddate">Date added</option>
+       <option value="pageurl">Profile Title</option>
+       <option value="number_articles">Number of Articles</option>
+       <!-- <option value="posts">Existing posts</option>
        <option value="qposts">Queued posts</option>
        <option value="waitinventory">Waiting on inventory</option>
         <option value="needcredits">Needing More Credits</option>
-        <option value="limitmaxbudget">Max Budget Reached</option> 
+        <option value="limitmaxbudget">Max Budget Reached</option> --> 
     </select>
     </div>
 <div class="col-md-6 box-header" >	
-    <select class="form-control plist" name="limit">
+    <select class="form-control p_fid" name="limit">
     <option value="">All project folders</option>
-    <option value="0">Unassigned</option>
+    <?php $folders=$posts->select('project_folder',"user_id='$user_id'",'folder_name,folder_id','user_id')?>
+    <?php foreach ($folders as $key => $value):?>
+    <option value="<?=$value['folder_id'];?>" <?php if($_GET['p_fid']==$value['folder_id']) echo 'selected';?>><?=$value['folder_name'];?></option>
+  <?php endforeach;?>
   </select>
     </div>
     <div class="col-md-6 box-header">	
@@ -95,21 +99,33 @@ endif;
 <?php 
 if(isset($_POST['q'])):
 $q=$_POST['q'];
-$profiles=$posts->select('link_profiles',"user_id='$user_id' and folder_name like'%$q%'",'*','user_id'); 
+$profiles=$posts->select('link_profiles',"user_id='$user_id' and pageurl like'%$q%'",'*','user_id'); 
 elseif(isset($_GET['plist'])):
  $limit=$_GET['plist'];
 $profiles=$posts->select('link_profiles',"user_id='$user_id'",'*','user_id',$limit); 
+elseif(isset($_GET['psort'])):
+ $psort=$_GET['psort'];
+$projects=$posts->select('article_profiles',"user_id='$user_id'",'*',$psort,$limit); 
+elseif(isset($_GET['p_fid'])):
+$p_fid=$_GET['p_fid'];
+if($p_fid!=''):$profiles=$posts->select('link_profiles',"user_id='$user_id' and folder_id='$p_fid'",'*','folder_id'); 
+else:$profiles=$posts->select('link_profiles',"user_id='$user_id'",'*','folder_id'); 
+endif;
+
 else:  
 $profiles=$posts->select('link_profiles',"user_id='$user_id'",'*','user_id'); 
 endif; 
 foreach ($profiles as $key => $value):
 ?> 
 <!-- list of the all profiles-->
-<div class="row box box box-primary">
+<div class="row box box-primary collapsed-box">
 <div class="col-md-12"> 
-<h3><?php echo $value['pageurl'];?> (Created: <?php echo $value['addeddate'];?>)</h3>
+<a href="#"  class="btn btn-box-tool" data-widget="collapse"> 
+<i class="fa fa-plus"></i>  
+<h3><?php echo $value['pageurl'];?> (Created: <?php echo $value['addeddate'];?>)</h3></a>
 <h4>Folder: <?php echo $posts->get_field('project_folder',"folder_id='$value[folder_id]'","folder_name");?></h4>
 </div>
+<div class="box-body">
 <div class="col-md-6">  
 <ul class="list-group">
 <li class="list-group-item">Number of comment links</li>
@@ -134,6 +150,7 @@ foreach ($profiles as $key => $value):
 <a href="Post-Links-Create-Queue?profile_id=<?php echo base64_encode($value['profile_id']);?>"><button class="btn  btn-default btn-xs">Post Links/Create Queue</button></a>
 <a href="Link-profiles"><button class="btn  btn-default btn-xs">Add Comment Links</button></a>
 <a href="#"><button class="btn  btn-default btn-xs">Add Contextual Links</button></a>
+</div>
 </div>
 </div>    
 <!--   end of listing of the profiles -->
@@ -165,12 +182,12 @@ foreach ($profiles as $key => $value):
                    </div>
                    <div class="form-group">
                    <label for="exampleInputProject">Project Folder</label>
-                   <select name="FolderID" class="form-control" id="FolderID">
+                   <select name="FolderID" class="form-control " id="FolderID">
                    <option value=""></option>
                   <?php $projs=$posts->select('project_folder',"user_id='$user_id'","*","id");
                      foreach ($projs as $key => $value):
                    ?>
-                   <option value="<?php echo $value['folder_id'];?>"><?php echo $value['folder_name'];?></option>
+                   <option value="<?php echo $value['folder_id'];?>" ><?php echo $value['folder_name'];?></option>
                    <?php endforeach;?>
                    </select>
 
@@ -281,3 +298,18 @@ $(this).data('form').submit();
 });
 </script>
 
+<script type="text/javascript">
+$('.plist').on('change',function(){ 
+window.location.href='?plist='+$(this).val();
+
+});
+$('.psort').on('change',function(){ 
+window.location.href='?psort='+$(this).val();
+
+});
+$('.p_fid').on('change',function(){ 
+window.location.href='?p_fid='+$(this).val();
+
+});
+
+</script>

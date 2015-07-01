@@ -1,0 +1,511 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Support Centre Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Support Centre&rdquo; Updating Guide by &ldquo;Patchesoft&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Support Centre&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 16/12/2013<br>
+					By: Patchesoft<br>
+					Email: <a href="mailto:patchesoft@gmail.com">patchesoft@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Hello! This document is a guide on how to update your Support Centre to the latest version. This guide will provide you details on the latest updates and how you can implement the update. For help on installing and modifying the Support Centre, please read the doucmentation file that came with it: <a href="index.html">here</a></p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#applicationStructure">Update Guide</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="applicationStructure"><strong>Update Guide</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Welcome to the Update Guide. This guide is to help you update your system to the latest version. We know that a lot of our customers do their own custom updates to their systems and so having to overwrite their files all the time can sometimes cause them problems. This update guide is to show you which files need to be updated in order for your system to be fully updated.</p>
+
+		<p><b>Version 1.8</b></p>
+		<p>This update requires you to overwrite all files as it updates the entire system to longer rely on mod_rewrite to work. This update includes: </p>
+
+		<ul>
+		<li>Removed French Routes</li>
+		<li>Fixed FileInfo Undefined Array</li>
+		<li>Option to disable SEO URLs for Knowledge Base Articles (admin Panel)</li>
+		<li>System Update: Now supports sites that don't have mod_rewrite or permission to use their own .htaccess files!</li>
+		<li>Default Database option has been changed to mysqli (faster!)</li>
+		</ul>
+
+		<p><b>Files to Overwrite</b></p>
+		<p>This update requires you to overwrite ALL files, including all views,controllers and models. Feel free to contact us if you have any issues.</p>
+		<p>For users using mod_rewrite, you need to change your application/config/config.php line to:</p>
+		<pre>$config['index_page'] = '';</pre>
+		<p>This is now the default option for new installations.</p>
+
+		<p><b>DATABASE UPDATE</b></p>
+		<p>This update contains a change to the database tables. In order to make the system work, you will need to execute the update.sql found in updates/version1.8/update.sql. Just import this file into your database manager (like phpMyAdmin) and it should update your database tables for you.</p>
+
+		<p><b>LANGUAGE UPDATE</b></p>
+		<p>For those who have up-to-date language files, you will need to add some new lines to your language files in order to translate the new content being added. Follow the simple edits below:</p>
+
+		<p>Modify file <b>application/language/english/admin_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['pg_adm_6'] = "Disable Knowledge Base SEO URLs";
+			$lang['pg_adm_7'] = "The system only supports SEO URLs with english characters (A-Z). Disable this option if you would prefer to use different characters in your Category names (but will make the category URLs use numbers instead of names).";
+		</pre>
+
+		<p><b>CLEAN INSTALL</b></p>
+		<p>Remember, if you have trouble updating, you can always do a clean install. Just follow the guide in the Documentation Guide as you did before and you will have the latest version of the system ready.</p>
+		
+		<hr>
+
+		<p><b>Version 1.7</b></p>
+		<p>This update contains several new changes to the Support Centre and we suggest doing a clean install. However, if you have made significant changes to your site, you can overwrite them one by one. The updates include:</p>
+		<ul>
+		<li>Fixed bug when Guest tried to close Guest Ticket</li>
+		<li>WYSIWYG Editor updated to include lots more options, including fonts, font-size, tables and more!</li>
+		<li>WYSIWYG Editor added to Ticket Replies and Canned Responses</li>
+		<li>Auto-Guest login URL generated when new guest tickets created.</li>
+		<li>Tickets for specific departments - assign staff to a specific ticket section only</li>
+		<li>Category name urls, article-name urls SEO friendly</li>
+		<li>Fixed SEO urls with Knowledge Base</li>
+		<li>Fixed a guest ticket login bug</li>
+		<li>Admin Notes no longer show up in print view if they are empty</li>
+		<li>User Settings no longer show up when not logged in</li>
+		<li>Upgraded System Files to latest version of CodeIgniter</li>
+		<li>Option to disable Captcha in Admin Panel</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<ul>
+		<li>application/controllers/tickets.php</li>
+		<li>application/controllers/sp_panel.php</li>
+		<li>application/controllers/agent.php</li>
+		<li>application/controllers/register.php</li>
+		<li>application/controllers/article.php</li>
+
+		<li>application/models/ticket_model.php</li>
+		<li>application/models/article_model.php</li>
+		<li>application/models/admin_model.php</li>
+		<li>application/models/register_model.php</li>
+		<li>application/models/content_model.php</li>
+
+		<li>application/libraries/user.php</li>
+		<li>application/libraries/lib_filter.php/li>
+		<li>application/libraries/settings.php</li>
+
+		<li>scripts/tinymce/config.js</li>
+		<li>scripts/ticket.js</li>
+		<li>styles/style.css</li>
+		<li>system/*</li>
+
+		<li>application/views/article/category.php</li>
+		<li>application/views/article/search.php</li>
+		<li>application/views/article/index.php</li>
+		<li>application/views/article/view.php</li>
+		<li>application/views/home/index.php</li>
+		<li>application/views/home/articles.php</li>
+		<li>application/views/agent/index.php</li>
+		<li>application/views/agent/sidebar.php</li>
+		<li>application/views/layout/layout.php</li>
+		<li>application/views/register/index.php</li>
+		<li>application/views/ticket/create.php</li>
+		<li>application/views/tickets/view.php</li>
+		<li>application/views/tickets/print.php</li>
+		<li>application/views/sp_panel/edit_canned_response.php</li>
+		<li>application/views/sp_panel/create_agent.php</li>
+		<li>application/views/sp_panel/edit_agent_pro.php</li>
+		<li>application/views/sp_panel/settings.php</li>
+
+		<li>application/language/english/content_lang.php</li>
+		<li>application/language/english/error_lang.php</li>
+		<li>application/language/english/admin_lang.php</li>
+		</ul>
+
+		<p><b>DATABASE UPDATE</b></p>
+		<p>This update contains a change to the database tables. In order to make the system work, you will need to execute the update.sql found in updates/version1.7/update.sql. Just import this file into your database manager (like phpMyAdmin) and it should update your database tables for you.</p>
+
+		<p><b>LANGUAGE UPDATE</b></p>
+		<p>For those who have up-to-date language files, you will need to add some new lines to your language files in order to translate the new content being added. Follow the simple edits below:</p>
+
+		<p>Modify file <b>application/language/english/content_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['email_part16'] = "Or log in using the URL below";
+			$lang['pg_ctn_13'] = "Category Locked";
+			$lang['pg_ctn_14'] = "If locked, the Agent won't be able to view other tickets in other categories in the Agent Panel (only allowed to view their default one).";
+		</pre>
+
+		<p>Modify file <b>application/language/english/admin_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['pg_adm_4'] = "Disable Captcha";
+			$lang['pg_adm_5'] = "Disables the captcha code on Ticket Creation and Registration Page.";
+		</pre>
+
+		<p>Modify file <b>application/language/english/error_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['error_msg_4'] = "You cannot view this category as you have been assigned to a different one.";
+			$lang['error_msg_5'] = "Title can only contain letters, numbers and _ underscores.";
+		</pre>
+
+		<p><b>CLEAN INSTALL</b></p>
+		<p>Remember, if you have trouble updating, you can always do a clean install. Just follow the guide in the Documentation Guide as you did before and you will have the latest version of the system ready.</p>
+		
+		<hr>
+
+		<p><b>Version 1.6</b></p>
+		<p>This update contains several new changes to the Support Centre and we suggest doing a clean install. However, if you have made significant changes to your site, you can overwrite them one by one. The updates include:</p>
+		<ul>
+		<li>Fixed registration form bug on certain servers</li>
+		<li>NEW Assign Staff To Tickets System</li>
+		<li>Updated Agent Panel Ticket Lists to take into account Assigned Tickets</li>
+		<li>When Staff reply to a ticket, they are automatically assigned.</li>
+		<li>Can assign other staff to a ticket or remove staff</li>
+		<li>Disable Registration Option</li>
+		<li>Require user to be logged in to view Knowledge Base Option</li>
+		<li>New Statistics page</li>
+		<li>Can Now Edit Ticket Responses</li>
+		<li>Cached Tweets Implemented</li>
+		<li>Added Article Title to Knowledge Base Article links for SEO purposes.</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<ul>
+		<li>application/controllers/agent.php</li>
+		<li>application/controllers/article.php</li>
+		<li>application/controllers/index.php</li>
+		<li>application/controllers/login.php</li>
+		<li>application/controllers/register.php</li>
+		<li>application/controllers/sp_panel.php</li>
+		<li>application/controllers/tickets.php</li>
+		<li>application/models/admin_model.php</li>
+		<li>application/models/content_model.php</li>
+		<li>application/models/login_model.php</li>
+		<li>application/models/ticket_model.php</li>
+		<li>application/libraries/lib_filter.php</li>
+		<li>application/libraries/settings.php</li>
+		<li>application/views/agent/sidebar.php</li>
+		<li>application/views/agent/index.php</li>
+		<li>application/views/article/category.php</li>
+		<li>application/views/home/articles.php</li>
+		<li>application/views/home/index.php</li>
+		<li>application/views/home/tweets.php</li>
+		<li>application/views/register/index.php</li>
+		<li>application/views/sp_panel/settings.php</li>
+		<li>application/views/sp_panel/sidebar.php</li>
+		<li>application/views/sp_panel/stats.php</li>
+		<li>application/views/sp_panel/twitter.php</li>
+		<li>application/views/tickets/assign.php</li>
+		<li>application/views/tickets/edit.php</li>
+		<li>application/views/tickets/view.php</li>
+		</ul>
+
+		<p><b>DATABASE UPDATE</b></p>
+		<p>This update contains a change to the database tables. In order to make the system work, you will need to execute the update.sql found in updates/version1.6/update.sql. Just import this file into your database manager (like phpMyAdmin) and it should update your database tables for you.</p>
+
+		<p><b>LANGUAGE UPDATE</b></p>
+		<p>For those who have up-to-date language files, you will need to add some new lines to your language files in order to translate the new content being added. Follow the simple edits below:</p>
+
+		<p>Modify file <b>application/language/english/content_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['pg_ctn_1'] = "Edit";
+			$lang['pg_suc_1'] = "The ticket was updated.";
+			$lang['pg_ctn_2'] = "Admin Options";
+			$lang['pg_ctn_3'] = "Assign Ticket";
+			$lang['pg_suc_2'] = "The user was removed from the assigned list!";
+			$lang['pg_ctn_4'] = "Here you can view the users which are assigned to this ticket. You can add or remove a user below.";
+			$lang['pg_ctn_5'] = "Staff members are automatically assigned when they reply to a ticket.";
+			$lang['pg_ctn_6'] = "Assigned Users";
+			$lang['pg_ctn_7'] = "Name";
+			$lang['pg_ctn_8'] = "Email";
+			$lang['pg_ctn_9'] = "Options";
+			$lang['pg_ctn_10'] = "Remove";
+			$lang['pg_suc_3'] = "The user was assigned to the ticket.";
+			$lang['pg_ctn_11'] = "Assign Staff Member To Ticket";
+			$lang['pg_ctn_12'] = "Assign User";
+			$lang['pg_ctn_6'] = "Assigned Users";
+		</pre>
+
+		<p>Modify file <b>application/language/english/admin_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['pg_sp_register'] = "Disable Registration";
+			$lang['pg_sp_register_help'] = "Check this box if you want to disable registration";
+			$lang['pg_sp_kb_login'] = "Login Required";
+			$lang['pg_sp_kb_login_help'] = "Checking this box will make sure only logged in users can use the Knowledge Base";
+			$lang['pg_adm_1'] = "Cache Tweet Time";
+			$lang['pg_adm_2'] = "The amount of time in seconds that you wish to cache Tweets for.";
+			$lang['pg_adm_3'] = "Statistics";
+		</pre>
+
+		<p>Modify file <b>application/language/english/error_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['error_msg_reg_closed'] = "Registration has been disabled!";
+			$lang['error_msg_1'] = "Invalid Ticket";
+			$lang['error_msg_2'] = "This is not your ticket to edit!";
+			$lang['short_bc_edit_ticket'] = "Edit Ticket";
+			$lang['error_msg_3'] = "Ticket Reply cannot be empty!";
+		</pre>
+
+		<p><b>CLEAN INSTALL</b></p>
+		<p>Remember, if you have trouble updating, you can always do a clean install. Just follow the guide in the Documentation Guide as you did before and you will have the latest version of the system ready.</p>
+		
+		<hr>
+
+		<p><b>Version 1.5.2</b></p>
+		<p>This small update includes just one bug fixe.</p>
+		<ul>
+		<li>Fixed pagination error in Agent Panel</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<ul>
+		<li>application/controllers/agent.php</li>
+		</ul>
+		
+		<hr>
+
+		<p><b>Version 1.5.1</b></p>
+		<p>This small update includes just two bug fixes.</p>
+		<ul>
+		<li>Fixed trying to get data on non-object errors.</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<ul>
+		<li>application/controllers/ticket.php</li>
+		<li>application/views/ticket/view.php</li>
+		</ul>
+		
+		<hr>
+		<p><b>Version 1.5</b>
+		<p>This update includes a few new updates:</p>
+		<ul>
+			<li>WYSIWYG Editor (tinyMCE) has been updated to now allow you insert videos, view source code and preview mode.</li>
+			<li>Danish Character Support</li>
+			<li>Canned Responses - Create custom responses that allow you to answer tickets faster!</li>
+			<li>Ticket Responses now recognise linebreaks properly</li>
+			<li>Added View By Category to Edit Article Area</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<p>There are quite a number of files modified in this update, so we do recommend updating all files. However, if you have made significant changes to your site, you can overwrite them one by one:</p>
+		<ul>
+			<li>application/controllers/sp_panel.php</li>
+			<li>application/controllers/tickets.php</li>
+			<li>application/models/admin_model.php</li>
+			<li>application/models/ticket_model.php</li>
+			<li>application/libraries/lib_filter.php</li>
+			<li>application/views/ticket/view.php</li>
+			<li>application/views/ticket/print.php</li>
+			<li>application/views/sp_panel/sidebar.php</li>
+			<li>application/views/sp_panel/add_canned_response.php (NEW)</li>
+			<li>application/views/sp_panel/edit_canned_response.php (NEW)</li>
+			<li>application/views/sp_panel/edit_canned_response_pro.php (NEW)</li>
+			<li>application/views/sp_panel/edit_article.php</li>
+			<li>scripts/ticket.js</li>
+			<li>scripts/tinymce/config.js</li>
+		</ul>
+
+		<p><b>DATABASE UPDATE</b></p>
+		<p>This update contains a change to the database tables. In order to make the system work, you will need to execute the update.sql found in updates/version1.5/update.sql. Just import this file into your database manager (like phpMyAdmin) and it should update your database tables for you.</p>
+
+		<p><b>LANGUAGE UPDATE</b></p>
+		<p>For those who have up-to-date language files, you will need to add some new lines to your language files in order to translate the new content being added. Follow the simple edits below:</p>
+
+		<p>Modify file <b>application/language/english/content_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['pg_ticket_canned_response'] = "Use Canned Response:";
+		</pre>
+
+		<p>Modify file <b>application/language/english/admin_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['admin_sb_link19'] = "Add Canned Response";
+			$lang['admin_sb_link20'] = "Edit Canned Response";
+			$lang['short_bc_canned'] = "Add Canned Response";
+			$lang['pg_canned_short'] = "Canned Responses are template reponses you can use to quickly reply to tickets. When you create a Canned Response, it will be available for agents to use when they view tickets. The following template codes can also be used in your template:";
+			$lang['pg_canned_s1'] = "prints the ticket creator's name";
+			$lang['pg_canned_s2'] = "prints the agent's name who is replying.";
+			$lang['pg_canned_t1'] = "Title";
+
+			$lang['short_bc_ecanned'] = "Edit Canned Response";
+			$lang['pg_canned_s3'] = "Select a canned response to edit below.";
+			$lang['pg_canned_s4'] = "Update Canned Response";
+
+			$lang['pg_edit_article_text3'] = "View By Category";
+		</pre>
+		<p>Save the file</p>
+
+		<p><b>CLEAN INSTALL</b></p>
+		<p>Remember, if you have trouble updating, you can always do a clean install. Just follow the guide in the Documentation Guide as you did before and you will have the latest version of the system ready.</p>
+
+		<hr>
+
+		<p><b>Version 1.4.1</b></p>
+		<p>This small update includes just one bug fix.</p>
+		<ul>
+		<li>Update to Library Filter to fix undefined variable errors</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<ul>
+		<li>application/libraries/lib_filter.php</li>
+		</ul>
+		<hr>
+
+		<p><b>Version 1.4</b></p>
+		<p>This version contains significant bug fixes and two new features: 
+		<ul>
+		<li>The Support Centre is now compatible in Internet Explore 8</li>
+		<li>Fixed wrong Admin Links</li>
+		<li>NEW: Admin Notes have been added to Tickets. Staff can now add notes which are hidden from regular users.</li>
+		<li>NEW: Print View has been added which displays all tickets and information to make it easier to print tickets.</li>
+		<li>Fixed Javascript errors for subfolder installations</li>
+		<li>Updated Lib Filter library to work with PHP versions < 5.3</li>
+		<li>Fixed Responsive issues with Landscape Views</li>
+		<li>Fixed bug with Edit Agent and Edit User</li>
+		<li>Improved Responsive view of Support Centre on iPhones</li>
+		<li>When Admins login, they are redirected to the Agent Panel instead of Frontpage.</li>
+		</ul>
+
+		<p><b>Files To Overwrite</b></p>
+		<p>There are quite a number of files modified in this update, so we do recommend updating all files. However, if you have made significant changes to your site, you can overwrite them one by one:
+		<ul>
+		<li><b>Controllers</b></li>
+		<li>application/controllers/tickets.php</li>
+		<li>application/controllers/sp_panel.php</li>
+		<li><b>Libraries</b></li>
+		<li>application/libraries/lib_filter.php</li>
+		<li>application/libraries/settings.php</li>
+		<li><b>Languages</b></li>
+		<li>application/languages/english/content_lang.php</li>
+		<li><b>Models</b></li>
+		<li>application/models/ticket_model.php</li>
+		<li>application/models/login_model.php</li>
+		<li><b>Views</b></li>
+		<li>application/views/layout/layout.php</li>
+		<li>application/views/sp_pane/* (all files)</li>
+		<li>application/views/tickets/view.php</li>
+		<li>NEW FILE application/views/tickets/notes.php</li>
+		<li>NEW FILE application/views/tickets/print.php</li>
+		<li><b>Styles</b></li>
+		<li>styles/style.css</li>
+		<li><b>Scripts</b></li>
+		<li>scripts/article.js</li>
+		<li>scripts/get_tweets.js</li>
+		<li>scripts/knowledge.js</li>
+		<li>scripts/ticket.js</li>
+		</ul>
+
+		<p><b>DATABASE UPDATE</b></p>
+		<p>This update contains a change to the database tables. In order to make the system work, you will need to execute the update.sql found in updates/version1.4/update.sql. Just import this file into your database manager (like phpMyAdmin) and it should update your database tables for you.</p>
+
+		<p><b>LANGUAGE UPDATE</b></p>
+		<p>For those who have up-to-date language files, you will need to add some new lines to your language files in order to translate the new content being added. Follow the simple edits below:</p>
+		<p>Modify file <b>application/language/english/content_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['flash_data_p38'] = "The notes were updated!";
+			$lang['short_bc_admin_notes'] = "Admin Notes";
+			$lang['pg_ticket_admin_notes'] = "Here you can modify the notes for this ticket: ";
+			$lang['pg_ticket_modify_notes'] = "Modify Admin Notes";
+			$lang['pg_ticket_update_notes'] = "Update Notes";
+			$lang['pg_ticket_no_notes'] = "No notes have been added to this ticket by admins.";
+			$lang['pg_ticket_edit_link'] = "Edit";
+			$lang['pg_ticket_print_link'] = "Print View";
+		</pre>
+		<p>Save the file</p>
+
+		<p><b>CLEAN INSTALL</b></p>
+		<p>Remember, if you have trouble updating, you can always do a clean install. Just follow the guide in the Documentation Guide as you did before and you will have the latest version of the system ready.</p>
+
+		<hr>
+
+		<p><b>Version 1.3</b></p>
+		<p>Version 1.3 is the first version released with an update guide. We recommend updating your files to this version since it contains some new updates to the system. The following updates are present:
+		<ul>
+		<li>Added Option to send alert emails to admins when new ticket is created or new reply</li>
+		<li>Updated Admin Panel views to display name and ticketid of tickets</li>
+		<li>Updated view ticket replies box to stop collapsing all the time on highlight</li>
+		<li>Version Number added settings class</li>
+		</ul></p>
+
+		<p><b>FILES TO OVERWRITE</b></p>
+		<p>For this update we suggest overwriting all files for ease of use. Just upload the files located in the core.zip and overwrite your current ones. Please make a backup to your application/config/config.php and application/config/database.php files as they contain your settings needed to power your site. Once you have uploaded the new files, just overwrite the two files (config.php and database.php) to get your settings back. If you have language files, you can modify them below in order to keep up to date.
+		</p>
+
+		<p><b>DATABASE UPDATE</b></p>
+		<p>This update contains a change to the database tables. In order to make the system work, you will need to execute the update.sql found in updates/version1.3/update.sql. Just import this file into your database manager (like phpMyAdmin) and it should update your database tables for you.</p>
+
+		<p><b>LANGUAGE UPDATE</b></p>
+		<p>For those who have up-to-date language files, you will need to add some new lines to your language files in order to translate the new content being added. Follow the simple edits below:</p>
+		<p>Modify file <b>application/language/english/admin_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['pg_sp_ticket_alert'] = "Ticket Alert";
+			$lang['pg_sp_ticket_alert_help'] = "Whenever a new ticket is created, an email 
+			is sent to all existing support staff.";
+		</pre>
+		<p>Save the file</p>
+
+		<p>Modify the file <b>application/language/english/content_lang.php</b> (or replace english with the name of your language folder)</p>
+		<p>Add the following lines of code to the bottom of your language file</p>
+		<pre>
+			$lang['email_part12'] = "A new response ticket has been created ";
+			$lang['email_part13'] = "A new ticket has been created for ticketid ";
+			$lang['email_part14'] = "Please login to view it at ";
+			$lang['email_part15'] = "A new ticket has been created ";
+		</pre>
+		<p>Save the file</p>
+
+		<p><b>CLEAN INSTALL</b></p>
+		<p>Remember, if you have trouble updating, you can always do a clean install. Just follow the guide in the Documentation Guide as you did before and you will have the latest version of the system ready.</p>
+
+
+
+
+
+
+		<hr>
+
+		<p class="append-bottom alt large"><strong>Patchesoft</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

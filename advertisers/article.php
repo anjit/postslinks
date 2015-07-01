@@ -117,8 +117,8 @@ foreach ($articles as $key => $value):
 <p><?php echo $posts->excerpt($value['article_text'],460);?></p>
 </div>
 <div class="col-md-12">  
-<a href="Write-Article?profile_id=<?php echo base64_encode($value['profile_id']);?>&&folder_id=<?php echo base64_encode($value['folder_id']);?>&&article_id=<?php echo base64_encode($value['article_id']);?>" /><button class="btn  btn-default btn-large">Edit Article</button></a>
-<a href="Article-profiles"><button class="btn  btn-default btn-large">Post Article</button></a>
+<a href="Write-Article?profile_id=<?php echo base64_encode($value['profile_id']);?>&folder_id=<?php echo base64_encode($value['folder_id']);?>&&article_id=<?php echo base64_encode($value['article_id']);?>" /><button class="btn  btn-default btn-large">Edit Article</button></a>
+<a href="Post-Articles?article_id=<?php echo base64_encode($value['article_id']);?>&profile_id=<?php echo base64_encode($value['profile_id']);?>"><button class="btn  btn-default btn-large">Post Article</button></a>
 </div>
 </div>    
 <!--   end of listing of the articles -->

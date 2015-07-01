@@ -1,0 +1,1 @@
+ALTER TABLE `site_settings` ADD `disable_seo` INT( 11 ) NOT NULL ;

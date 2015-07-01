@@ -12,7 +12,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
     <meta charset="UTF-8">
 
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>Postlinks | Dashboard</title>
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
@@ -66,7 +66,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
   </head>
 
-  <body class="skin-blue">
+  <body class="skin-green">
 
     <div class="wrapper">
 
@@ -76,7 +76,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
         <!-- Logo -->
 
-        <a href="index2.html" class="logo"><b>Backlinks</b></a>
+        <a href="index" class="logo"><b>Backlinks</b></a>
 
         <!-- Header Navbar: style can be found in header.less -->
 
@@ -124,7 +124,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                           <div class="pull-left">
 
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                            <img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="User Image"/>
 
                           </div>
 
@@ -148,7 +148,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                           <div class="pull-left">
 
-                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image"/>
+                            <img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="user image"/>
 
                           </div>
 
@@ -172,7 +172,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                           <div class="pull-left">
 
-                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image"/>
+                            <img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="user image"/>
 
                           </div>
 
@@ -196,7 +196,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                           <div class="pull-left">
 
-                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image"/>
+                            <img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="user image"/>
 
                           </div>
 
@@ -220,7 +220,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                           <div class="pull-left">
 
-                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image"/>
+                            <img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="user image"/>
 
                           </div>
 
@@ -478,7 +478,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <img src="<?php echo $_SESSION['user_img'];?>" class="user-image" alt="User Image"/>
 
                   <span class="hidden-xs">Alexander Pierce</span>
 
@@ -490,7 +490,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                   <li class="user-header">
 
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                    <img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="User Image" />
 
                     <p>
 
@@ -532,7 +532,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                     <div class="pull-left">
 
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="Profile" class="btn btn-default btn-flat">Profile</a>
 
                     </div>
 

@@ -14,7 +14,7 @@
 
 <div class="pull-left image">
 
-<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+<img src="<?php echo $_SESSION['user_img'];?>" class="img-circle" alt="User Image" />
 
 </div>
 

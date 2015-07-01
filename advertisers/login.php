@@ -2,6 +2,44 @@
 ob_start();
 session_start();
 ?>
+<?php
+if(isset($_POST['submit']))
+{
+ob_start();
+include('../load.php');
+$email=$_POST['email'];
+$pass=$_POST['pass'];
+$type=$_POST['type'];
+
+$users=$posts->select("users","email='$email' and pass='$pass' and type='$type'",'*','user_id');
+//print_r($users);
+foreach ($users as $user) {
+$pwd =$user['pass'];
+$per=$user['type'];
+$email=$user['email'];
+$img=$user['image'];
+$name=$user['username'];
+$uid=$user['user_id'];
+}
+if($pass==$pwd&$pwd!='')
+{ 
+$_SESSION['permission']=$per;
+$_SESSION['email']=$email;
+$_SESSION['user_img']=$img;
+$_SESSION['username']=$name;
+$_SESSION['user_id']=$uid;
+header("location:index");
+exit;
+}
+else{
+$_SESSION['msg']='Username or Password invalid';
+//header('location:login.php');
+}
+}
+else{
+include ('vistor_counter.php');
+}
+?>
 <!DOCTYPE html>
 
 <html>
@@ -84,9 +122,7 @@ unset($_SESSION[msg]);
 
 <div class="form-group has-feedback">
 <select name="type" class="form-control">
-<option value="admin">Admin</option>
 <option value="advertisers">Advertisers</option>
-<option value="publishers">Publishers</option>
 </select>     
 
 </div>
@@ -176,39 +212,3 @@ increaseArea: '20%' // optional
 </body>
 
 </html>
-<?php
-
-if(isset($_POST['submit']))
-{
-ob_start();
-include('../load.php');
-$email=$_POST['email'];
-$pass=$_POST['pass'];
-$type=$_POST['type'];
-
-$users=$posts->select("users","email='$email' and pass='$pass' and type='$type'",'*','user_id');
-//print_r($users);
-foreach ($users as $user) {
-$pwd =$user['pass'];
-$per=$user['type'];
-$email=$user['email'];
-$img=$user['img'];
-$name=$user['username'];
-$uid=$user['user_id'];
-}
-if($pass==$pwd&$pwd!='')
-{ 
-$_SESSION['permission']=$per;
-$_SESSION['email']=$email;
-$_SESSION['user_img']=$img;
-$_SESSION['username']=$name;
-$_SESSION['user_id']=$uid;
-header("location:index");
-exit;
-}
-else{
-$_SESSION['msg']='Username or Password invalid';
-//header('location:login.php');
-}
-}
-?>

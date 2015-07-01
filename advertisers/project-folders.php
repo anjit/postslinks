@@ -87,10 +87,15 @@ endif;
 foreach ($projects as $key => $value):
 ?> 
 <!-- list of the all projects-->
-<div class="row box box box-primary">
-<div class="col-md-12"> 
-<h3><?php echo $value['folder_name'];?> (<?php echo $value['num_linkprofs'];?> links| 575 credits)</h3>
+<div class="row  box box-primary collapsed-box">
+<div class="col-md-12 box-title"> 
+<a href="#"  class="btn btn-box-tool" data-widget="collapse">
+<i class="fa fa-plus"></i><h4><?php echo $value['folder_name'];?> (<?php echo $value['num_linkprofs'];?> links| 575 credits)</h4>
+</a>
 </div>
+
+
+<div class="box-body">
 <div class="col-md-6">  
 <ul class="list-group">
 <li class="list-group-item">Articals Posts</li>
@@ -112,6 +117,8 @@ foreach ($projects as $key => $value):
 <a href="Link-profiles"><button class="btn  btn-default btn-xs">Add Links Profiles</button></a>
 <a href="#"><button class="btn  btn-default btn-xs">Create Campaign Queues</button></a>
 </div>
+</div>
+
 </div>    
 <!--   end of listing of the projects -->
 <?php endforeach;?>
