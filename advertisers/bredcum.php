@@ -15,8 +15,7 @@ text-transform: capitalize;
 <section class="content-header">
 <h1>
 <?php 
-$url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-$url = $_SERVER['REQUEST_URI']; //returns the current URL
+$url="http://".$_SERVER['PHP_SELF'];
 $parts = explode('/',$url);
 $ptitle=end($parts);
 $pt= str_replace('-',' ',$ptitle);

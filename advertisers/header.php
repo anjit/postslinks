@@ -43,6 +43,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
     <!-- Theme style -->
 
     <link href="../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
 
@@ -480,7 +481,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                   <img src="<?php echo $_SESSION['user_img'];?>" class="user-image" alt="User Image"/>
 
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"><?=$_SESSION['username']?></span>
 
                 </a>
 
@@ -494,7 +495,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                     <p>
 
-                      Alexander Pierce - Web Developer
+                      <?=$_SESSION['username']?> - Web Developer
 
                       <small>Member since Nov. 2012</small>
 
@@ -538,7 +539,7 @@ $_SESSION['p_pass']='Z9kRye5jWz87KH';
 
                     <div class="pull-right">
 
-                      <a href="../logout" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="logout" class="btn btn-default btn-flat">Sign out</a>
 
                     </div>
 

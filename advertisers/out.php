@@ -14,6 +14,8 @@ foreach($_FILES as $file) {
 	$src = 'data: '.mime_content_type($img_file).';base64,'.$imgData;
 	echo '<img src="'.$src.'"><br>';
 	$posts->update('users',"user_id=$user_id",'image',$src);
+	unset($_SESSION['user_img']);
+	$_SESSION['user_img']=$src;
 }
 
 ?>

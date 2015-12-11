@@ -3,7 +3,6 @@
 <?php include('bredcum.php');?>
 <?php 
 $user_id=$_SESSION['user_id'];
-print_r($_SESSION);
 ?>
 <!-- Main content -->
 <section class="content">
@@ -30,6 +29,7 @@ print_r($_SESSION);
 <input type="hidden" name="userid" value="<?=$user_id;?>">
 <input type="hidden" name="email" value="<?=$_SESSION['email'];?>">
 <input type="hidden" name="amount" id="amount" value="49">
+<input type="hidden" name="item_number" id="item_number" value="3">
 <input type="hidden" name="no_shipping" value="1">
 <input type="hidden" name="return" value="http://afydemo.com/anjit/postslinks/advertisers/order-process">
 <input type='hidden' name='rm' value='2'>
@@ -45,10 +45,13 @@ print_r($_SESSION);
 <div class="form-group">
 <label class="col-sm-2 control-label">Number of credits:</label>
 <div class="col-sm-10">
+<?php 
+$levels =$posts->all('member_plan',"*",'id');
+?>	
 <select name="cred" id="cred" onchange="re_calc(this.value)" class="form-control">
-<option value="Basic Membership" >Basic Membership (1000 credits)</option>
-<option value="Plus Membership">Plus Membership (5000 credits)</option>
-<option value="SEO Pro Membership">SEO Pro Membership (25000 credits)</option>
+<?php foreach ($levels as $key => $value): ?>
+<option value="<?=$value['membership_level'];?>"><?=$value['membership_level'];?> (<?=$value['credits'];?> credits)</option>
+<?php endforeach;?>
 </select>
 </div>
 </div>
@@ -194,19 +197,16 @@ print_r($_SESSION);
 function re_calc(val){
 
 $('#item_name').val(val);
+<?php 
+$levels =$posts->all('member_plan',"*",'id');
+?>	
+<?php foreach ($levels as $key => $value): ?>
+if(val=='<?=$value['membership_level'];?>'){
+$('#price').text('$<?=$value['price'];?>');
+$('#amount').val('<?=$value['price'];?>');
+$('#item_number').val('<?=$value['id'];?>');
 
-if(val=='Plus Membership'){
-$('#price').text('$149');
-$('#amount').val('149');
-
 }
-if(val=='SEO Pro Membership'){
-$('#price').text('$499');
-$('#amount').val('499');
-}
-if(val=='Basic Membership'){
-$('#price').text('$49');
-$('#amount').val('49');
-}
+<?php endforeach;?>
 }
 </script>

@@ -7,7 +7,14 @@ $profile_id=base64_decode($_GET['profile_id']);
 $user_id=$_SESSION['user_id'];
 
 ?>
-
+<style type="text/css">
+.final_price{
+	color: green;
+}
+.remain_price{
+	color: red;
+}
+</style>
 <!-- Main content -->
 <section class="content">
 
@@ -33,7 +40,7 @@ echo $articles[0]['article_title'];
 </div>
 <div class="form-group">
 <label for="exampleInputNotes">Number of posts (?)</label>
-<input type="text" name="Notes" placeholder="No of Post" value="">
+<input type="text" name="Notes" placeholder="No of Post" value="" id="numpost">
 </div>
 
 <div class="form-group">
@@ -64,23 +71,23 @@ echo $articles[0]['article_title'];
 </div>
 <div class="drank" style="display:none;">
 <label for="exampleInputNotes">Min/Max Domain Authority :</label>
-<select name="lngMinDA" id="FromDA" onchange="calcCost()" style="width: 70px">
+<select name="lngMinDA" id="FromDA" onchange="calCost()" style="width: 70px">
 <option value="0">DA0</option>
-<option value="10" selected="selected">DA10</option>
+<option value="10" selected="">DA10</option>
 <option value="16">DA16</option>
 <option value="22">DA22</option>
 <option value="28">DA28</option>
 <option value="35">DA35</option>
 <option value="100">DA100</option>
 </select> TO 
-<select name="lngMaxDA" id="ToDA" onchange="calcCost()" style="width: 70px">
+<select name="lngMaxDA" id="ToDA" onchange="calCost()" style="width: 70px">
 <option value="0">DA0</option>
 <option value="10">DA10</option>
 <option value="16">DA16</option>
 <option value="22">DA22</option>
 <option value="28">DA28</option>
 <option value="35">DA35</option>
-<option value="100" selected="selected">DA100</option>
+<option value="100" selected="">DA100</option>
 </select>
 </div>
 </div>
@@ -111,9 +118,12 @@ echo $articles[0]['article_title'];
 </div>
 <div class="form-group">
 <label for="exampleInputNotes">Available Credits :</label>
+<span class="remain_price"><?php $credits=$posts->get_field('credits_records',"user_id='$user_id'",'credits');echo $credits;?></span>
 </div>
 <div class="form-group">
 <label for="exampleInputNotes">Min Posting Cost :</label>
+<span class="final_price"></span>
+<input type="hidden" class="final_price" name="credits"> 
 </div>
 
 </div><!-- /.box-body -->
@@ -137,11 +147,20 @@ $(document).ready(function(){
 $('.showprbtn').click(function(){
 $('.prank').show();
 $('.drank').hide();
+var num=$('#numpost').val();
+final_price=pr_cal(parseInt(1))*(parseInt(num));
+$('.final_price').html(final_price);	
+$('.final_price').val(final_price);	
 });
 
 $('.showdabtn').click(function(){
 $('.drank').show();
 $('.prank').hide();
+var num=$('#numpost').val();
+final_price=dr_cal(parseInt(1))*(parseInt(num));
+$('.final_price').html(final_price);	
+$('.final_price').val(final_price);	
+
 });
 });
 
@@ -158,6 +177,95 @@ if(val=='instant'){
 	$('.pperoid').hide();	
 }
 }
+$('#numpost').keyup(function(){
+calcCost();
+});
 
+function calcCost(){
+	
+var num=$('#numpost').val();
+var FromPR=$('#FromPR').val();
+var ToPR=$('#ToPR').val();
+var FromDA=$('#FromDA').val();
+var ToDA=$('#ToDA').val();
+final_price=pr_cal(parseInt(FromPR))*(parseInt(num));
+$('.final_price').html(final_price);	
+$('.final_price').val(final_price);	
+if(parseInt(ToPR)<=parseInt(FromPR))
+{
+final_price=pr_cal(parseInt(ToPR))*(parseInt(num));
+$('.final_price').html(final_price);	
+$('.final_price').val(final_price);	
+}
+}
+function calCost(){
+	
+var num=$('#numpost').val();
+var FromDA=$('#FromDA').val();
+var ToDA=$('#ToDA').val();
+final=dr_cal(parseInt(FromDA))*(parseInt(num));
+
+$('.final_price').html(final);	
+$('.final_price').val(final);	
+if(parseInt(ToDA)<=parseInt(FromDA))
+{
+final=dr_cal(parseInt(ToDA))*(parseInt(num));
+$('.final_price').html(final);	
+$('.final_price').val(final);	
+}
+}
+
+function pr_cal(pr_val){
+switch (pr_val) {
+    case 1:
+        return 1;
+        break;
+    case 2:
+        return 5;
+        break;
+    case 3:
+        return 10;
+        break;
+    case 4:
+        return 20;
+        break;
+    case 5:
+        return 40;
+        break;
+    case 0:
+        return 1;
+        break;
+    default:
+    	return 1;
+}
+}
+function dr_cal(dr_val){
+
+switch (dr_val) {
+    case 10:
+        return 1;
+        break;
+    case 16:
+        return 2;
+        break;
+    case 22:
+        return 3;
+        break;
+    case 28:
+        return 4;
+        break;
+    case 35:
+        return 7;
+        break;
+    case 100:
+        return 7;
+        break;
+    case 0:
+        return 1;
+        break;
+    default:
+    	return 1;
+}
+}
 
 </script>

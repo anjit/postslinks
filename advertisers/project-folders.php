@@ -187,7 +187,7 @@ foreach ($projects as $key => $value):
 <!-- End of add project -->
 
 
-<?php include('footer.php');?>
+<?php include('main-footer.php');?>
 <script type="text/javascript">
 $('#addmodel').on('show.bs.modal', function (e) {
 $message = $(e.relatedTarget).attr('data-message');

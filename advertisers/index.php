@@ -541,7 +541,7 @@ $user_id=$_SESSION['user_id'];
 <?php 
 $users_img=$posts->all('users','*','user_id','10');
 foreach ($users_img as $key => $value) :
-?>
+	?>
 
 <li>
 

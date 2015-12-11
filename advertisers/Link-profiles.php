@@ -122,7 +122,7 @@ foreach ($profiles as $key => $value):
 <div class="col-md-12"> 
 <a href="#"  class="btn btn-box-tool" data-widget="collapse"> 
 <i class="fa fa-plus"></i>  
-<h3><?php echo $value['pageurl'];?> (Created: <?php echo $value['addeddate'];?>)</h3></a>
+<h4><?php echo $value['pageurl'];?> (Created: <?php echo $value['addeddate'];?>)</h4></a>
 <h4>Folder: <?php echo $posts->get_field('project_folder',"folder_id='$value[folder_id]'","folder_name");?></h4>
 </div>
 <div class="box-body">

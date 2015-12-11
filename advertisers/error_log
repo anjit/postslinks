@@ -892,3 +892,86 @@
 [23-Jun-2015 01:39:35 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/index.php on line 73
 [23-Jun-2015 01:39:40 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
 [26-Jun-2015 06:02:31 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:20:03 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:22:43 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:44:19 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:46:55 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:47:43 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:48:10 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:48:13 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[30-Jun-2015 04:55:07 America/Chicago] PHP Warning:  array_map(): Argument #2 should be an array in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 8
+[30-Jun-2015 04:55:07 America/Chicago] PHP Warning:  implode(): Invalid arguments passed in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 8
+[30-Jun-2015 04:55:07 America/Chicago] PHP Warning:  array_map(): Argument #2 should be an array in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 8
+[30-Jun-2015 04:55:07 America/Chicago] PHP Warning:  implode(): Invalid arguments passed in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 8
+[30-Jun-2015 06:35:37 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/order-process.php on line 8
+[30-Jun-2015 07:17:23 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/order-process.php on line 8
+[30-Jun-2015 07:17:25 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/order-process.php on line 8
+[30-Jun-2015 07:17:25 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/order-process.php on line 8
+[30-Jun-2015 07:17:26 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/order-process.php on line 8
+[01-Jul-2015 02:18:50 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[01-Jul-2015 02:18:53 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[01-Jul-2015 02:18:55 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[01-Jul-2015 02:19:18 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[01-Jul-2015 03:09:46 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 6 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 03:13:27 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 6 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 04:21:16 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 04:21:26 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 04:21:46 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 04:21:57 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/afydemo1/public_html/anjit/postslinks/advertisers/queuedposts.php on line 73
+[01-Jul-2015 08:18:17 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 08:18:44 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 08:18:55 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 08:19:05 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 09:26:17 America/Chicago] PHP Warning:  mysql_result(): count(*) as count not found in MySQL result index 10 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 09:26:55 America/Chicago] PHP Warning:  mysql_result(): count(*) as count not found in MySQL result index 10 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 09:30:05 America/Chicago] PHP Warning:  mysql_result(): count(*) as count not found in MySQL result index 10 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 09:34:12 America/Chicago] PHP Warning:  mysql_result(): count(*) as count not found in MySQL result index 10 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[01-Jul-2015 09:35:58 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 61
+[06-Jul-2015 04:37:54 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[06-Jul-2015 04:40:52 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[06-Jul-2015 04:41:18 America/Chicago] PHP Warning:  include(load.php): failed to open stream: No such file or directory in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 1
+[06-Jul-2015 04:41:18 America/Chicago] PHP Warning:  include(load.php): failed to open stream: No such file or directory in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 1
+[06-Jul-2015 04:41:18 America/Chicago] PHP Warning:  include(): Failed opening 'load.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 1
+[06-Jul-2015 04:41:18 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php:1) in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 4
+[06-Jul-2015 19:41:18 Australia/Melbourne] PHP Fatal error:  Call to a member function update() on a non-object in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 8
+[06-Jul-2015 04:41:21 America/Chicago] PHP Warning:  include(load.php): failed to open stream: No such file or directory in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 1
+[06-Jul-2015 04:41:21 America/Chicago] PHP Warning:  include(load.php): failed to open stream: No such file or directory in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 1
+[06-Jul-2015 04:41:21 America/Chicago] PHP Warning:  include(): Failed opening 'load.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 1
+[06-Jul-2015 04:41:21 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php:1) in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 4
+[06-Jul-2015 19:41:21 Australia/Melbourne] PHP Fatal error:  Call to a member function update() on a non-object in /home4/afydemo1/public_html/anjit/postslinks/advertisers/logout.php on line 8
+[06-Jul-2015 04:42:35 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[06-Jul-2015 05:02:58 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:07:12 America/Chicago] PHP Warning:  mysql_result(): credits,level not found in MySQL result index 13 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:07:12 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:07:45 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[06-Jul-2015 05:07:45 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 13 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:08:08 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:09:11 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:09:41 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:09:45 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:10:10 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:10:42 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:10:48 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:11:54 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:13:40 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 14 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:15:14 America/Chicago] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 227
+[06-Jul-2015 05:15:15 America/Chicago] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 227
+[06-Jul-2015 05:30:22 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:30:30 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 05:32:18 America/Chicago] PHP Warning:  mysql_result(): Unable to jump to row 0 on MySQL result index 16 in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 94
+[06-Jul-2015 06:47:43 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[06-Jul-2015 06:47:52 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[06-Jul-2015 06:48:54 America/Chicago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home4/afydemo1/public_html/anjit/postslinks/functions.php on line 50
+[06-Jul-2015 06:52:32 America/Chicago] PHP Parse error:  syntax error, unexpected '?>' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 273
+[06-Jul-2015 06:52:34 America/Chicago] PHP Parse error:  syntax error, unexpected '?>' in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 273
+[06-Jul-2015 07:22:05 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 355
+[06-Jul-2015 07:22:06 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 355
+[06-Jul-2015 07:22:07 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 355
+[06-Jul-2015 07:22:08 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 355
+[06-Jul-2015 07:22:09 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 355
+[06-Jul-2015 07:22:10 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/afydemo1/public_html/anjit/postslinks/advertisers/Profile.php on line 355
+[06-Jul-2015 07:59:33 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[06-Jul-2015 08:04:14 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[06-Jul-2015 08:07:35 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[07-Jul-2015 06:06:32 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14
+[07-Jul-2015 06:20:57 America/Chicago] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home4/afydemo1/public_html/anjit/postslinks/advertisers/out.php on line 14

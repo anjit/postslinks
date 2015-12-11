@@ -20,7 +20,7 @@
 
 <div class="pull-left info">
 
-<p>Alexander Pierce</p>
+<p><?=$_SESSION['username']?></p>
 
 
 
@@ -106,7 +106,7 @@
 
 <li class="treeview">
 
-<a href="Publisher-Account">
+<a href="../publishers">
 
 <i class="fa fa-table"></i> <span>Publisher Account</span>
 

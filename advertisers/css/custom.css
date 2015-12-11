@@ -1,0 +1,12 @@
+.btn-box-tool i.fa.fa-plus {
+  text-align: center;
+  display: inline-block;
+  float: left;
+  padding: 14px;
+}
+.btn-box-tool i.fa.fa-minus {
+  text-align: center;
+  display: inline-block;
+  float: left;
+  padding: 14px;
+}
